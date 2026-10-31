@@ -1,9 +1,9 @@
-# compile for Volta GPU
+# CUDA build
 CUDADIR ?= /usr/local/cuda
 
-# gpu architecture
-# Ampere by default, with forward compatibility
-sm=80
+# This machine reports compute capability 5.0.
+# Override for another GPU with: make sm=XX
+sm=50
 GENCODE_SM   = -gencode arch=compute_$(sm),code=sm_$(sm)
 GENCODE_COMP = -gencode arch=compute_$(sm),code=compute_$(sm)
 
